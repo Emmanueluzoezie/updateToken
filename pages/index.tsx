@@ -3,11 +3,21 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { useState } from 'react'
-import { updateToken } from '../createToken'
+// import { updateToken } from '../createToken'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const trying = async() => {
+    fetch('/api/metadata', {
+      method: 'POST',
+      // ... other settings if needed ...
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+  }
 
   return (
     <>
@@ -21,7 +31,7 @@ export default function Home() {
       <div className='text-white'>
             <div>
                 <h2>Welcome to token creation</h2>
-          <button onClick={updateToken}>testing</button>
+          <button onClick={trying}>testing</button>
             </div>
         </div>
     </>

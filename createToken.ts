@@ -16,10 +16,6 @@
 //     sendAndConfirmTransaction,
 //     Signer,
 // } from '@solana/web3.js';
-
-import { createMetadataAccountV3 } from "@metaplex-foundation/mpl-token-metadata";
-import { clusterApiUrl, Connection } from "@solana/web3.js";
-
 // export const createToken = async () => {
 //     const payer = Keypair.generate();
 //     const mintAuthority = Keypair.generate();
@@ -224,8 +220,50 @@ import { clusterApiUrl, Connection } from "@solana/web3.js";
 
 // // Sign and send the transaction
 // const signature = await web3.sendAndConfirmTransaction(connection, transaction, [payer]);
-// console.log("Metadata account created with signature:", signature);
+// console.log("Metadata account created with si
+// import { promises as fs } from 'fs';
+// import { DataV2, createCreateMetadataAccountV2Instruction, Creator } from '@metaplex-foundation/mpl-token-metadata';
+// import { findMetadataPda } from '@metaplex-foundation/js';
+// import { PublicKey, Keypair, Connection, sendAndConfirmTransaction, Transaction } from "@solana/web3.js";
+// import path from 'path';
 
 export const updateToken = async () => {
+    // const secretKeyPath = "./marine/MatpcMWB9rmKi3n9QLBW7iad4T44G9yQ3VFnT6TYazh.json";
+    // const secretKeyPath = path.join(process.cwd(), '/marine/MatpcMWB9rmKi3n9QLBW7iad4T44G9yQ3VFnT6TYazh.json');
+    // const secretKeyData = await fs.readFile(secretKeyPath, 'utf8');
+    // const secretKeyUint8Array = JSON.parse(secretKeyData);
 
+    // const connection = new Connection("https://api.mainnet-beta.solana.com", "finalized");
+    // const payer = Keypair.fromSecretKey(Uint8Array.from(secretKeyUint8Array));
+    // const mintAddress = new PublicKey('C4CeC77nFuSLZSXTc6meam2hBH3m1fyafsh6XY2mkFF7');
+
+    // const metadataPDA = await findMetadataPda(mintAddress);
+
+    // const tokenMetadata= {
+    //     name: "Marine",
+    //     symbol: "MARN",
+    //     uri: "https://i.postimg.cc/rpMD0R5p/marine.jpg",
+    //     sellerFeeBasisPoints: 0,
+    //     creators: [], // Cast to Creator[] if no creators
+    //     collection: null,
+    //     uses: null
+    // };
+
+    // const createNewTokenTransaction = new Transaction().add(
+    //     createCreateMetadataAccountV2Instruction({
+    //         metadata: metadataPDA,
+    //         mint: mintAddress,
+    //         mintAuthority: payer.publicKey,
+    //         payer: payer.publicKey,
+    //         updateAuthority: payer.publicKey,
+    //     }, {
+    //         createMetadataAccountArgsV2: {
+    //             data: tokenMetadata,
+    //             isMutable: true
+    //         }
+    //     })
+    // );
+
+    // const signature = await sendAndConfirmTransaction(connection, createNewTokenTransaction, [payer]);
+    // console.log("Metadata account updated with signature:", signature);
 }

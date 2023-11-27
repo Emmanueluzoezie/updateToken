@@ -15,7 +15,7 @@ export default function handler(
     res.status(200).json({
         name: "Marine",
         symbol: "Marn",
-        description: "A brief description of the token.",
-        image: "https://example.com/path/to/token-image.png",
+        description: "A brief description of the marine token.",
+        image: "https://i.postimg.cc/rpMD0R5p/marine.jpg",
     })
 }
